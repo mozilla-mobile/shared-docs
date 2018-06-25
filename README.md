@@ -1,5 +1,7 @@
 # mozilla-mobile Shared Documentation
-This repository is intended to host documentation that doesn't fit into a single mozilla-mobile repository.
+This repository is intended to host documentation that doesn't fit into a single mozilla-mobile repository. You can quickly access this page at the following URL:
+
+https://mozilla-mobile.github.io/docs.html
 
 The mozilla-mobile repository is primarily managed by two teams at Mozilla:
 - Firefox for iOS team
