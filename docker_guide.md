@@ -1,7 +1,9 @@
 # mozilla-mobile Docker Guide
-TaskCluster runs our automation tasks, such as compilation and unit tests, in a [Docker container](https://en.wikipedia.org/wiki/Docker_(software)). We maintain our own Docker images:
+TaskCluster runs our automation tasks, such as compilation and unit tests, in a [Docker container](https://en.wikipedia.org/wiki/Docker_(software)). We maintain our own Docker images. A complete up-to-date listing is available [on Docker Hub](https://hub.docker.com/r/mozillamobile/):
 - [`mozillamobile/focus-android`](https://hub.docker.com/r/mozillamobile/focus-android/)
 - [`mozillamobile/firefox-tv`](https://hub.docker.com/r/mozillamobile/firefox-tv/)
+- [`mozillamobile/android-components`](https://hub.docker.com/r/mozillamobile/android-components/)
+- [`mozillamobile/fenix`](https://hub.docker.com/r/mozillamobile/fenix/)
 
  These images contain all the tools (e.g. Android SDK, Python runtime) needed to run our tasks. These images are built from a Dockerfile located in our repository (e.g. [focus-android Dockerfile](https://github.com/mozilla-mobile/focus-android/blob/master/tools/docker/Dockerfile)). Taskcluster downloads this image from [Docker Hub](https://hub.docker.com/) whenever it needs to run one of our tasks.
 
