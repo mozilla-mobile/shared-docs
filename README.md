@@ -24,3 +24,4 @@ Want to see other mobile projects Mozilla works on? A few others are:
 - [Firefox for Android](https://wiki.mozilla.org/Mobile/Get_Involved)
 - [Lockbox](https://github.com/mozilla-lockbox/)
 - [Firefox Reality (for VR)](https://github.com/mozillareality/firefoxreality)
+- [Firefox Rocket](https://github.com/mozilla-tw/Rocket)
