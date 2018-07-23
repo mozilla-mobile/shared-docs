@@ -22,18 +22,18 @@ Taskcluster runs using docker: see our [docker guide] for more information.
 
 ## Travis
 
-Travis was added as second CI system after buddybuild. It allowed us to integrate third-party tools like sputnik and codecov (see below) more easily as they explicitly supported travis. In addition to that running some of the tasks on travis took load from buddybuild where we share limited resources with other mobile teams.
+[Travis] is an easy-to-configure continuous integration environment with
+great support for GitHub.
 
-Today we use travis to:
+We currently use Travis to:
 * Build, test and run code tools for all master commits and pull requests (including contributor PRs).
 * Execute sputnik for posting automated code feedback in pull requests
 * Execute codecov for monitoring our code coverage
 
-### Resources
+To see a travis configuration for your project, see `<project-root>/.travis.yml` (here's an
+[example in focus-android][travis yml]).
 
-* [Travis build log for Focus/Klar](https://travis-ci.org/mozilla-mobile/focus-android)
-* [Travis configuration in repo](https://github.com/mozilla-mobile/focus-android/blob/master/.travis.yml)
-
+You can also find build logs on the travis website, e.g. for focus-android: https://travis-ci.org/mozilla-mobile/focus-android
 
 # Code quality tools
 
@@ -166,3 +166,5 @@ To investigate:
 [docker guide]: https://github.com/mozilla-mobile/shared-docs/blob/master/docker_guide.md
 [tc yml]: https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39
 [tc]: https://docs.taskcluster.net/docs
+[travis]: https://travis-ci.org/
+[travis yml]: https://github.com/mozilla-mobile/focus-android/blob/master/.travis.yml
