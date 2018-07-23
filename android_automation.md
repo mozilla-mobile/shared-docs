@@ -1,6 +1,13 @@
-# Continuous integration systems
+# Automation and continuous integration systems
 
-*Looking for the Docker Guide? See [our shared-docs](https://github.com/mozilla-mobile/shared-docs/blob/master/docker_guide.md).*
+Our Android projects share a similar automation model:
+- Taskcluster is our primary CI: we use it for as much automation as
+possible, including our core builds and releases, because it's a
+flexible first party service we can rely on.
+- Travis is secondary: we use it to get automation working quickly or get
+support for tools that won't work on Taskcluster.
+
+
 
 ## Travis
 
