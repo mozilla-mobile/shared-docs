@@ -7,7 +7,18 @@ flexible first party service we can rely on.
 - Travis is secondary: we use it to get automation working quickly or get
 support for tools that won't work on Taskcluster.
 
+## Taskcluster
 
+[Taskcluster][tc] is a generic task execution framework developed and used by Mozilla to automate continuous integration and release processes.
+
+We currently use Taskcluster to:
+* Build, test and run code tools for all master commits and pull requests
+(including contributor PRs). See [Code quality tools](#Code quality tools)
+additional information.
+* Build (unsigned) release builds whenever a release is created on GitHub
+* Automatically import new translations from the L10N repository.
+
+Taskcluster runs using docker: see our [docker guide] for more information.
 
 ## Travis
 
@@ -23,26 +34,20 @@ Today we use travis to:
 * [Travis build log for Focus/Klar](https://travis-ci.org/mozilla-mobile/focus-android)
 * [Travis configuration in repo](https://github.com/mozilla-mobile/focus-android/blob/master/.travis.yml)
 
-## Taskcluster
 
-Taskcluster is a generic task execution framework developed and used by Mozilla to automate continuous integration and release processes. It is the most flexible system and the one we want to use for most automation tasks in the future.
+# Code quality tools
 
-So far we use taskcluster to:
-* Build, test and run code tools for all master commits and pull requests (including contributor PRs).
-* [Current code tools](https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39): unit tests, Android Lint, detekt, pmd, checkstyle, findbugs
-* Build (unsigned) release builds whenever a release is created on GitHub
-* Automatically import new translations from the L10N repository.
-
-
-
-# Third-party tools
-
+For Java/Kotlin projects, we like to run the following tools:
 * findbugs
 * PMD
 * Android lint
 * checkstyle
 * [detekt](https://github.com/arturbosch/detekt)
 * [ktlint](https://github.com/shyiko/ktlint)
+
+To see what tools are currently run in automation for your project, see
+the project's `<project-root>/.taskcluster.yml`
+(here's an [example in focus-android][tc yml]).
 
 # Third-party services
 
@@ -157,3 +162,7 @@ To investigate:
 * Currently we use an API 21 (Android 5.0) emulator in automation. Are our tests more reliable on a newer version? Note that this might require updating the Docker image. By default we only install the API 21 runtime.
 * How should we upload to S3? For builds [beetmover](https://github.com/mozilla-releng/beetmoverscript/) is used. But this will require a ChainOfTrust again. Could we upload from the screenshot task itself? Is this a security risk?
 * What S3 bucket (and URL) should we use? We need a setup similar to archive.mozilla.org. However archive.mozilla.org itself might not be suitable as we only want to save the last state of screenshots somewhere. Cloud services might have an opinion on that. See [bug 1402804](https://bugzilla.mozilla.org/show_bug.cgi?id=1402804) for a related request.
+
+[docker guide]: https://github.com/mozilla-mobile/shared-docs/blob/master/docker_guide.md
+[tc yml]: https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39
+[tc]: https://docs.taskcluster.net/docs
