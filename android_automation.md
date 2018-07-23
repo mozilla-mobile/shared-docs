@@ -18,6 +18,10 @@ for additional information.
 * Build (unsigned) release builds whenever a release is created on GitHub
 * Automatically import new translations from the L10N repository.
 
+To see a Taskcluster configuration for your project, see
+`<project-root>/.taskcluster.yml` (here's an
+[example in focus-android][tc yml]).
+
 Taskcluster runs using docker: see our [docker guide] for more information.
 
 ## Travis
@@ -47,7 +51,7 @@ For Java/Kotlin projects, we like to run the following tools:
 
 To see what tools are currently run in automation for your project, see
 the project's `<project-root>/.taskcluster.yml`
-(here's an [example in focus-android][tc yml]).
+(here's an [example in focus-android][tc yml tools]).
 
 # Third-party services
 
@@ -164,7 +168,8 @@ To investigate:
 * What S3 bucket (and URL) should we use? We need a setup similar to archive.mozilla.org. However archive.mozilla.org itself might not be suitable as we only want to save the last state of screenshots somewhere. Cloud services might have an opinion on that. See [bug 1402804](https://bugzilla.mozilla.org/show_bug.cgi?id=1402804) for a related request.
 
 [docker guide]: https://github.com/mozilla-mobile/shared-docs/blob/master/docker_guide.md
-[tc yml]: https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39
+[tc yml]: https://github.com/mozilla-mobile/focus-android/blob/master/.taskcluster.yml
+[tc yml tools]: https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39
 [tc]: https://docs.taskcluster.net/docs
 [travis]: https://travis-ci.org/
 [travis yml]: https://github.com/mozilla-mobile/focus-android/blob/master/.travis.yml
