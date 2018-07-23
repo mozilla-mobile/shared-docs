@@ -2,24 +2,6 @@
 
 *Looking for the Docker Guide? See [our shared-docs](https://github.com/mozilla-mobile/shared-docs/blob/master/docker_guide.md).*
 
-## Buddybuild
-
-Buddybuild was the first CI system we used. It allowed us to build, test and distribute the app. In addition to that we were able to collect crash reports and feedback from our release audience. Most things are configured on the buddybuild website; except for the prebuild and postbuild scripts that live in the repository.
-
-Today we still use it to:
-* Build pull requests from team members and selected contributors
-* Run UI tests on actual devices via Firebase test lab (only for commits on master)
-* Distribute builds to the Focus team for every change on master
-* Distribute weekly builds to our L10N teams
-* Sometimes distribute builds of specific branches to UX or others for testing
-
-### Resources
-
-* [Overview page for Focus/Klar on buddybuild](https://dashboard.buddybuild.com/apps/584f67f6f3d6eb01000842d6)
-* [Buddybuild docs](https://docs.buddybuild.com/)
-* [postbuild script in repo (executed after builds)](https://github.com/mozilla-mobile/focus-android/blob/master/buddybuild_postbuild.sh)
-* [prebuild script in repo (executed before builds)](https://github.com/mozilla-mobile/focus-android/blob/master/buddybuild_prebuild.sh)
-
 ## Travis
 
 Travis was added as second CI system after buddybuild. It allowed us to integrate third-party tools like sputnik and codecov (see below) more easily as they explicitly supported travis. In addition to that running some of the tasks on travis took load from buddybuild where we share limited resources with other mobile teams.
