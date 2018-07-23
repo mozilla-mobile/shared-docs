@@ -14,7 +14,7 @@ support for tools that won't work on Taskcluster.
 We currently use Taskcluster to:
 * Build, test and run code tools for all master commits and pull requests
 (including contributor PRs). See [Code quality tools](#code-quality-tools)
-additional information.
+for additional information.
 * Build (unsigned) release builds whenever a release is created on GitHub
 * Automatically import new translations from the L10N repository.
 
