@@ -22,7 +22,8 @@ To see a Taskcluster configuration for your project, see
 `<project-root>/.taskcluster.yml` (here's an
 [example in focus-android][tc yml]).
 
-Taskcluster runs using docker: see our [docker guide] for more information.
+Taskcluster runs using docker: see our [docker guide](docker_guide.md) for
+more information.
 
 ## Travis
 
@@ -167,7 +168,6 @@ To investigate:
 * How should we upload to S3? For builds [beetmover](https://github.com/mozilla-releng/beetmoverscript/) is used. But this will require a ChainOfTrust again. Could we upload from the screenshot task itself? Is this a security risk?
 * What S3 bucket (and URL) should we use? We need a setup similar to archive.mozilla.org. However archive.mozilla.org itself might not be suitable as we only want to save the last state of screenshots somewhere. Cloud services might have an opinion on that. See [bug 1402804](https://bugzilla.mozilla.org/show_bug.cgi?id=1402804) for a related request.
 
-[docker guide]: https://github.com/mozilla-mobile/shared-docs/blob/master/docker_guide.md
 [tc yml]: https://github.com/mozilla-mobile/focus-android/blob/master/.taskcluster.yml
 [tc yml tools]: https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39
 [tc]: https://docs.taskcluster.net/docs
