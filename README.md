@@ -27,3 +27,13 @@ Want to see other mobile projects Mozilla works on? A few others are:
 - [Lockbox](https://github.com/mozilla-lockbox/)
 - [Firefox Reality (for VR)](https://github.com/mozillareality/firefoxreality)
 - [Firefox Rocket](https://github.com/mozilla-tw/Rocket)
+
+## Improving this documentation
+Didn't understand our documentation? Please file an issue or open a pull request:
+we encourage all contributions!
+
+A great tool to edit this documentation is [Visual Studio Code][code], which has a
+built-in [markdown preview][md preview].
+
+[code]: https://code.visualstudio.com/
+[md preview]: https://code.visualstudio.com/Docs/languages/markdown#_markdown-preview
