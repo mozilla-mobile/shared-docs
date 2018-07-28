@@ -49,7 +49,7 @@ we don't understand them.
 * Get in touch with the [existing localization
   team](https://wiki.mozilla.org/L10n:Teams).
 * Localization happens on
-  [Pontoon](https://pontoon.mozilla.org/projects/focus-for-android/).
+  [Pontoon](https://pontoon.mozilla.org/projects/) (example: [focus-android][fa pontoon]).
 
 ## User experience design
 
@@ -86,4 +86,5 @@ See [CONTRIBUTING_code.md](./CONTRIBUTING_code.md).
 
 [Community Participation Guidelines]: https://www.mozilla.org/en-US/about/governance/policies/participation/
 [fa issues]: https://github.com/mozilla-mobile/focus-android/issues
+[fa pontoon]: https://pontoon.mozilla.org/projects/focus-for-android/
 [sumo]: https://support.mozilla.org/en-US/
