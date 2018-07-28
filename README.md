@@ -33,10 +33,12 @@ Want to see other mobile projects Mozilla works on? A few others are:
 
 ## Improving this documentation
 Didn't understand our documentation? Please file an issue or open a pull request:
-we encourage all contributions!
+we encourage all contributions! If you're looking to write docs for open issues,
+look at the [`help wanted` issues][help].
 
 A great tool to edit this documentation is [Visual Studio Code][code], which has a
 built-in [markdown preview][md preview].
 
 [code]: https://code.visualstudio.com/
 [md preview]: https://code.visualstudio.com/Docs/languages/markdown#_markdown-preview
+[help]: https://github.com/mozilla-mobile/shared-docs/labels/%F0%9F%93%96%20help%20wanted
