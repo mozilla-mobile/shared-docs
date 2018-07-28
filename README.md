@@ -17,6 +17,9 @@ Looking to see what we're up to or contribute? Check out one of our products:
 - [Focus for iOS](https://github.com/mozilla-mobile/focus-ios)
 
 ### Android
+*Want to know how to contribute on Android? Check out our
+[CONTRIBUTING](android/CONTRIBUTING.md) documentation! We encourage non-code
+contributions too!*
 - [Focus for Android](https://github.com/mozilla-mobile/focus-android)
 - [Firefox for Fire TV](https://github.com/mozilla-mobile/firefox-tv)
 - [Android Components](https://github.com/mozilla-mobile/android-components)
