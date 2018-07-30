@@ -7,6 +7,8 @@ The mozilla-mobile repository is primarily managed by two teams at Mozilla:
 - Firefox for iOS team
 - Android Product Team (APT)
 
+Check out our blog on Medium: https://medium.com/firefox-mobile-engineering
+
 ## Products
 Looking to see what we're up to or contribute? Check out one of our products:
 
