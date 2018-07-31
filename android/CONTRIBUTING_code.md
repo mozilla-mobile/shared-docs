@@ -1,4 +1,10 @@
 # Contributing code to Mozilla's Android projects
+Thank you for taking the time to contribute to one of Mozilla's Android
+projects! 🔥 🦊 <3 🤖! 🎉 👍 For a full list of projects, see
+[the README](../README.md#android).
+
+Before contributing, please review our [Community Participation Guidelines].
+
 **New to Mozilla's mobile projects?** See issues labeled `good first issue` in your project's
 issues tracker (example: [focus-android][fa good first]). These are designed to be
 easier to implement so you can focus on learning our pull request workflow. *Please only
@@ -23,5 +29,6 @@ UI changes, so UX can also do a visual review.
 * Include a `Closes #<issue-number>` as part of your first commit message so
 it's auto-linked to the issue.
 
+[Community Participation Guidelines]: https://www.mozilla.org/en-US/about/governance/policies/participation/
 [fa good first]: https://github.com/mozilla-mobile/focus-android/labels/good%20first%20issue
 [fa help]: https://github.com/mozilla-mobile/focus-android/labels/help%20wanted
