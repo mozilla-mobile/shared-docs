@@ -8,6 +8,7 @@ Before contributing, please review our [Community Participation Guidelines].
 If you run into trouble at any point, ask for help! Check out our
 [preferred communication channels.](./CONTRIBUTING.md#communication)
 
+Contents:
 - [Finding issues to work on](#finding-issues-to-work-on)
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Merging](#merging)
