@@ -5,6 +5,10 @@ projects! 🔥 🦊 <3 🤖! 🎉 👍 For a full list of projects, see
 
 Before contributing, please review our [Community Participation Guidelines].
 
+If you run into trouble at any point, ask for help! Check out our
+[preferred communication channels.](./CONTRIBUTING.md#communication)
+
+## Finding issues to work on
 **New to Mozilla's mobile projects?** See issues labeled `good first issue` in your project's
 issues tracker (example: [focus-android][fa good first]). These are designed to be
 easier to implement so you can focus on learning our pull request workflow. *Please only
@@ -14,16 +18,16 @@ fix one of these.*
 [focus-android][fa help]). These are issues that are ready to be implemented without
 additional product or UX discussion.
 
-If you run into trouble, ask for help! Check out our
-[preferred communication channels.](./CONTRIBUTING.md#communication)
+**When you find an issue you'd like to work on,** *comment on the issue* saying that
+you'd like to work on it. This ensures it is still available for you to work on.
 
-When writing code:
-* **Comment on an issue if you would like to work on it.** This ensures it is still
-available for you to work on
-* If you want to work on a new feature then *always file an issue first* and wait
+**If you want to work on a new feature**, *always file an issue first* and wait
 for our team to discuss it. We want to ensure all teams (product, ux, engineering)
 have an opportunity to provide feedback. **Pull requests for unsolicited features
 are unlikely to get merged.**
+
+## Creating a Pull Request
+
 * When you open a pull request, please also include a screenshot if there are
 UI changes, so UX can also do a visual review.
 * Include a `Closes #<issue-number>` as part of your first commit message so
