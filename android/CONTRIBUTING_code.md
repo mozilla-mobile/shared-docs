@@ -8,6 +8,10 @@ Before contributing, please review our [Community Participation Guidelines].
 If you run into trouble at any point, ask for help! Check out our
 [preferred communication channels.](./CONTRIBUTING.md#communication)
 
+- [Finding issues to work on](#finding-issues-to-work-on)
+- [Creating a Pull Request](#creating-a-pull-request)
+- [Merging](#merging)
+
 ## Finding issues to work on
 **New to Mozilla's mobile projects?** See issues labeled `good first issue` in your project's
 issues tracker (example: [focus-android][fa good first]). These are designed to be
@@ -27,6 +31,39 @@ have an opportunity to provide feedback. **Pull requests for unsolicited feature
 are unlikely to get merged.**
 
 ## Creating a Pull Request
+Our team follows [the GitHub pull request workflow][gh workflow]: fork, branch, commit,
+pull request, automated tests, review, merge. If you're new to GitHub, check out [the official
+guides][gh guides] for more information.
+
+An example commit message summary looks like, `Closes #5: Upgrade gradle to v1.3.0`.
+
+Please follow these guidelines for your pull requests:
+
+- All Pull Requests should address an issue. If your pull request doesn't have an
+issue, file it!
+  - GitHub search defaults to issues, not PRs, so ensuring there is an issue for your PR
+  means it'll be easier to find
+- The commit message summary should briefly describe what code changed in the commit, *not
+the issue you're fixing.*
+  - We encourage you to use the commit message body to elaborate what changed and why
+- Include the issue number in your commit messages. This links your PR to the issue it's
+intended to fix.
+  - If your PR closes an issue, include `Closes #...` in one of your commit messages. This
+  will automatically close the linked issue ([more info][auto close]).
+- Prefer "micro commits".
+  - A micro commit is a small commit that generally changes one thing.
+  A single Pull Request may comprise of multiple incremental micro commits.
+  - Commits should generally not undo the work of previous commits in the same PR.
+  - If you're not comfortable making micro commits, it's okay to begin contributing without
+  them.
+- Add a reviewer to ensure someone sees, and reviews, your pull request so it can be merged
+- If the tests fail, fix them! We won't merge if the tests aren't passing.
+- If there are UI changes, include a screenshot so UX can also do a visual review
+- When in doubt, look at the closed PRs in the repository to follow as an example or ask
+us online!
+
+If your code is not approved, address the suggested comments, push your changes, and re-request
+review from your reviewer again.
 
 * When you open a pull request, please also include a screenshot if there are
 UI changes, so UX can also do a visual review.
@@ -36,3 +73,6 @@ it's auto-linked to the issue.
 [Community Participation Guidelines]: https://www.mozilla.org/en-US/about/governance/policies/participation/
 [fa good first]: https://github.com/mozilla-mobile/focus-android/labels/good%20first%20issue
 [fa help]: https://github.com/mozilla-mobile/focus-android/labels/help%20wanted
+[gh workflow]: https://guides.github.com/introduction/flow/
+[gh guides]: https://guides.github.com/
+[auto close]: https://help.github.com/articles/closing-issues-using-keywords/
