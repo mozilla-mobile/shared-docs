@@ -10,7 +10,7 @@ We welcome all types of contributions, including, but not limited to:
 * [Filing issues](#filing-issues)
 * [Translating our apps](#translating-our-apps)
 * [User experience design](#user-experience-design)
-* [Writing documentation](#documentation)
+* [Writing documentation](#writing-documentation)
 * [Testing the app](#testing-the-app)
 * [Writing code](./CONTRIBUTING_code.md)
 
