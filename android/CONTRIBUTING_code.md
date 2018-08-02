@@ -1,6 +1,6 @@
 # Contributing code to Mozilla's Android projects
 Thank you for taking the time to contribute to one of Mozilla's Android
-projects! 🔥 🦊 <3 🤖! 🎉 👍 For a full list of projects, see
+projects! 🔥 🦊 ❤️ 🤖! 🎉 👍 For a full list of projects, see
 [the README](../README.md#android).
 
 Before contributing, please review our [Community Participation Guidelines].
@@ -54,11 +54,16 @@ intended to fix.
 - Prefer "micro commits".
   - A micro commit is a small commit that generally changes one thing.
   A single Pull Request may comprise of multiple incremental micro commits.
+  - A series of micro commits should tell a story. For example, if your goal is to add a new
+  icon to the toolbar, you can make a commit to add the icon asset and then make a commit to
+  use the icon in the code.
   - Commits should generally not undo the work of previous commits in the same PR.
   - If you're not comfortable making micro commits, it's okay to begin contributing without
   them.
 - Add a reviewer to ensure someone sees, and reviews, your pull request so it can be merged
-- If the tests fail, fix them! We won't merge if the tests aren't passing.
+- If the tests fail, please try to fix them! Keeping the tests passing ensures our code isn't
+broken and the code is unlikely to get merged without passing tests. If you run into trouble,
+ask for help!
 - If there are UI changes, include a screenshot so UX can also do a visual review
 - When in doubt, look at the closed PRs in the repository to follow as an example or ask
 us online!
