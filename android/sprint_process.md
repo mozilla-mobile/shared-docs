@@ -3,6 +3,40 @@ Projects created by the Android Product Team typically ship a major release ever
 
 Development is broken down into two week-long chunks of time called sprints: we track the work for these sprints in GitHub milestones (example: [focus-android][milestone example]). We have several planning meetings to identify what should go into each release and thus into each sprint.
 
+## Sprint planning meetings
+### Roadmap (monthly)
+The product team plans and prioritizes the project roadmap: the general project plan over the next few months. These meetings will:
+- At a high level, decide which features go into which releases
+- Schedule team work weeks
+- Modify the release schedule (if necessary)
+
+Updates from this meeting will be emailed to the full team.
+
+### Triage (weekly)
+The full team will go through newly filed issues to:
+- Assign priority labels (P1, P2, ...) to bugs without priority labels or the `addressed` label
+- Ensure all P1 labels are assigned to a milestone
+- Ensure all P2 labels are assigned to a milestone
+
+Each project should link to its own triage queries (example: [focus-android](https://github.com/mozilla-mobile/focus-android/issues?q=is%3Aissue+is%3Aopen+-label%3AP1+-label%3AP2+-label%3AP3+-label%3AP4+-label%3AP5+-label%3Aaddressed+-label%3Ablocked+sort%3Aupdated-desc+no%3Amilestone)).
+
+For more information on priority labels, [see below](#issue-naming-and-labels).
+
+### Bug management (weekly)
+The full team meets to manage bugs. This meeting time-slot alternates between two separate agendas:
+
+#### Sprint planning
+Held before a sprint begins, in this meeting we:
+- Decide what goes into the current sprint by promoting P2 issues to P1
+- Decide what goes into the next sprint by adding issues to the upcoming milestone and setting them as P2
+
+#### Backlog grooming
+Held mid-sprint, in this meeting we:
+- Handle triage overflow
+- Add to the contributor bug lists (e.g. `help wanted`)
+- Check in on current sprint progress
+- Look over the upcoming sprint
+
 ## Issue naming and labels
 
 ### Labels
@@ -25,24 +59,5 @@ Other labels:
     These do NOT get a P* label, but should be in a milestone.
 * `[breakdown]`: issue to track the work of breaking down a larger bug
 
-## Triage - Weekly
-- ([Link](https://github.com/mozilla-mobile/focus-android/issues?q=is%3Aissue+is%3Aopen+-label%3AP1+-label%3AP2+-label%3AP3+-label%3AP4+-label%3AP5+-label%3Aaddressed+-label%3Ablocked+sort%3Aupdated-desc+no%3Amilestone)) Assign priority labels (P1, P2, ...) to bugs without priority labels or the `addressed` label
-- ([Link](https://github.com/mozilla-mobile/focus-android/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AP1+no%3Amilestone+)) Ensure all P1 labels are assigned a milestone
-- ([Link](https://github.com/mozilla-mobile/focus-android/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AP2+no%3Amilestone+)) Ensure all P2 labels are assigned a milestone
-
-## Weekly Bug management (alternating)
-
-### Sprint planning
-Deciding what goes into a sprint, promote P2 issues to P1. After every release, this meeting is for deciding what goes into the upcoming milestone - add issues to the milestone and set them as P2.
-
-### Backlog grooming
-Handling Triage overflow, adding to the contributor bug lists, looking at milestone lists.
-
 [triage priority]: https://wiki.mozilla.org/Bugmasters/Process/Triage#Weekly_or_More_Frequently_.28depending_on_the_component.29
-## Monthly Roadmap Planning
-Plan and prioritize features for upcoming milestones - an update will be emailed out.
-
-Plan and facilitate workweeks
-release schedule
-trying to work with things without proper training
-too much observing
+[milestone example]: https://github.com/mozilla-mobile/focus-android/milestone/30?closed=1
