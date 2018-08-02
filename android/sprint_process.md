@@ -1,5 +1,7 @@
 # APT sprint process
-Focus follows a 2-week sprint cycle with 6-week milestone releases. Dot-releases with bugfixes are released every two weeks. Our upcoming train schedule is [here](https://wiki.mozilla.org/Mobile/Focus/Android/Train_Schedule).
+Projects created by the Android Product Team typically ship a major release every six weeks and ship a minor release twice between major releases (every two weeks). For example, if v2.0 is released on week 0, v2.1 will be released on week 2, v2.2 will be released on week 4, and v3.0 will be released on week 6. Emergency bug fixes can be released more frequently. Projects will typically link to their release schedule (example: [focus-android](https://wiki.mozilla.org/Mobile/Focus/Android/Train_Schedule)).
+
+Development is broken down into two week-long chunks of time called sprints: we track the work for these sprints in GitHub milestones (example: [focus-android][milestone example]). We have several planning meetings to identify what should go into each release and thus into each sprint.
 
 ## Issue naming and labels
 
