@@ -20,7 +20,7 @@ The full team will go through newly filed issues to:
 
 Each project should link to its own triage queries (example: [focus-android](https://github.com/mozilla-mobile/focus-android/issues?q=is%3Aissue+is%3Aopen+-label%3AP1+-label%3AP2+-label%3AP3+-label%3AP4+-label%3AP5+-label%3Aaddressed+-label%3Ablocked+sort%3Aupdated-desc+no%3Amilestone)).
 
-For more information on priority labels, [see below](#issue-naming-and-labels).
+For more information on priority labels, [see below](#categorizing-issues).
 
 ### Bug management (weekly)
 The full team meets to manage bugs. This meeting time-slot alternates between two separate agendas:
@@ -37,23 +37,22 @@ Held mid-sprint, in this meeting we:
 - Check in on current sprint progress
 - Look over the upcoming sprint
 
-## Issue naming and labels
+## Categorizing issues
+We have several conventions for categorizing our issues.
 
 ### Labels
-Priority labels are based on the [Bugzilla triage process][triage priority] and set during triage to determine when they'll be worked on:
-* `P1`: Issues for the current 2-week sprint.
-  * [Open engineering issues](https://github.com/mozilla-mobile/focus-android/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3AP1%20NOT%20%5Bux%5D%20in%3Atitle%20)
-  * [Open UX issues](https://github.com/mozilla-mobile/focus-android/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3AP1%20ux%20in%3Atitle%20)
-* `P2`: Issues for the 6-week milestone release.
-  * [Open engineering issues](https://github.com/mozilla-mobile/focus-android/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3AP2%20NOT%20%5Bux%5D%20in%3Atitle%20)
-  * [Open UX issues](https://github.com/mozilla-mobile/focus-android/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20label%3AP2%20ux%20in%3Atitle%20)
+We label issues with their priority: these priorities are based on the [Bugzilla triage process][triage priority].
+* `P1`: issues for the current 2-week sprint
+* `P2`: issues for the 6-week milestone release
 * `P3`: Backlog
 * `P5`: Will not fix but will accept a patch
 
 Other labels:
-* `addressed`: Label for excluding items from triage. Should be used for [meta] items.
+* `addressed`: label for excluding items from triage. Should be used for [meta] items.
 
 ### Issue Prefixes
+In the issue title, we may prefix the name to categorize the issues.
+
 * `[meta]`: larger issues that need to be broken down, into a `[breakdown]` issue and issues for its smaller parts. This should include a checklist of all the issues (including the `[breakdown]` issue).
 
     These do NOT get a P* label, but should be in a milestone.
