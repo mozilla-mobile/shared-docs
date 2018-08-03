@@ -76,15 +76,11 @@ Eventually we want to automate the whole release process pipeline in order to ha
 
 ### ✅ Active: Release builds
 
-Whenever a release is created on GitHub we build releases versions of Focus and Klar on taskcluster.
+Whenever a release is created on GitHub, we build releases versions of the project on taskcluster (example: [focus-android configuration](https://github.com/mozilla-mobile/focus-android/blob/master/.taskcluster.yml#L91)).
 
-* [Configuration](https://github.com/mozilla-mobile/focus-android/blob/master/.taskcluster.yml#L91)
+### ✅ Active: Signing
 
-### 📓 Planned: Signing
-
-Signing requires access to Mozilla's signing certificates. In addition to that a signing task needs to be able to validate the origin of the APK ("Can I trust the task that built the APK?") to avoid signing random tasks. To get this task up and running we need help from the release engineering team.
-
-Currently this is done manually by the release engineering team after we open a signing request bug on Bugzilla.
+Signing requires access to Mozilla's signing certificates. In addition to that a signing task needs to be able to validate the origin of the APK ("Can I trust the task that built the APK?") to avoid signing random tasks.
 
 * [Chain of Trust](http://scriptworker.readthedocs.io/en/latest/chain_of_trust.html)
 * [pushapkscript](https://github.com/mozilla-releng/pushapkscript)
@@ -98,13 +94,7 @@ Before we can automate this task we need to automate signing builds and have a c
 * [beetmover script](https://github.com/mozilla-releng/beetmoverscript/)
 * [beetmover configuration for Fennec](https://github.com/mozilla-releng/beetmoverscript/blob/master/beetmoverscript/templates/fennec_nightly.yml)
 
-### 📓 Planned: Release signoff
-
-This is a dummy task that does nothing except waiting on somebody to complete it. After the build is tested and the release stakeholders agree to ship, someone from the Focus team will use the taskcluster-cli tool to manually resolve this task.
-
-* [taskcluster ci](https://github.com/taskcluster/taskcluster-cli)
-
-### 📓 Planned: Publish
+### ✅ Active: Publish
 
 Finally we want to publish a release build on Google Play
 
@@ -115,16 +105,7 @@ Like other scriptworker instances, we can use the existing instance. The current
 
 ## Nightly (Alpha) pipeline
 
-We want to build Nightly versions from master. Those Nightly builds should be distributed via the Google Play Alpha channel and replace distributing via buddybuild. Updates via buddybuild require manual download and installation of updates. With Google Play builds can update automatically in the background.
-
-The Alpha channel is not intended to be public like the Beta channel. However it should be open to the L10N teams and interested contributors.
-
-The pipeline for Nightly builds looks like the release sign-off pipeline without the upload and sign-off tasks.
-
-* 📓 Planned: Build (triggered via taskcluster hook)
-* 📓 Planned: Signing
-* 📓 Planned: Upload to Google Play
-* 📓 Planned: Publish on Alpha channel
+TODO: explain the current process
 
 ## Maintenance tasks
 
@@ -132,36 +113,10 @@ The pipeline for Nightly builds looks like the release sign-off pipeline without
 
 Every day at 12:00 UTC we run a script that imports the latest translations from the L10N repository and creates a pull request for the import if there are new strings. Eventually this import can be merged automatically. For now we want to review those changes manually to validate that the task is running as intended.
 
+We hope to improve this process soon.
+
 * [Task script](https://github.com/mozilla-mobile/focus-android/blob/master/tools/taskcluster/import_strings_and_create_pull_request.sh)
 * [Hook and task definition](https://tools.taskcluster.net/hooks/project-focus/strings-import)
-
-### ⚙️ In progress: Screenshots
-
-Taking screenshots is a long running progress. On taskcluster we can run this automatically and for multiple locales in parallel.
-
-We are using **fastlane *screengrab*** to take screenshots of the app in different locales. Screengrab will run a subset of UI tests that include screenshot commands. The tool will take care of changing the locale, re-running the tests and generating a HTML page containing all screenshots.
-
-* [Screengrab docs](https://docs.fastlane.tools/actions/screengrab/)
-
-For automating the screenshot process our plan is to run screengrab on taskcluster using an emulator. After that we upload the screenshots to a S3 bucket that can be accessed from a static URL.
-
-On taskcluster we execute our [schedule-screenshots.py](https://github.com/mozilla-mobile/focus-android/blob/master/tools/taskcluster/schedule-screenshots.py) script. This script will generate multiple child screenshot tasks for a subset of locales (~5 locales per task). This allows us to parallelize the work. Previously in our tests a single task required about 5 hours to run the test suite for all locales.
-
-A screenshot child task will execute [take-screenshots.sh](https://github.com/mozilla-mobile/focus-android/blob/master/tools/taskcluster/take-screenshots.sh) which will spin up an emulator and run screengrab.
-
-We haven't implemented a taskcluster hook for taking screenshots yet. So far we have been testing this from a pull request with modified taskcluster configuration:
-https://github.com/mozilla-mobile/focus-android/pull/1719/files
-
-Some problems we are facing:
-* On taskcluster (or more precisely: in Docker) we are running ARM emulators without hardware acceleration. They are pretty slow and have been making tests unreliably because of timing issues. See #1367 for example.
-* Our emulator has to run with "-gpu off". With that screengrab can't use uiautomator to take screenshots. We wrote a workaround implementation that will execute screencap  (Don't get confused: screengrab <-> screencap) from the host system: [screencap-server.py](https://github.com/mozilla-mobile/focus-android/blob/master/tools/taskcluster/screencap-server.py)
-
-To investigate:
-* Can we run the emulator with hardware acceleration? Some research seems to indicate that Docker needs to have access to the KVM of the host machine. This might require a special type of taskcluster worker. If this (hardware accelerated emulator inside Docker) can be verified locally then we can ask the taskcluster team to help us with setting that up.
-* Can we stabilize our current set of UI tests with the current setup? The task itself does not need to be fast. Screenshots need to be generated infrequently.
-* Currently we use an API 21 (Android 5.0) emulator in automation. Are our tests more reliable on a newer version? Note that this might require updating the Docker image. By default we only install the API 21 runtime.
-* How should we upload to S3? For builds [beetmover](https://github.com/mozilla-releng/beetmoverscript/) is used. But this will require a ChainOfTrust again. Could we upload from the screenshot task itself? Is this a security risk?
-* What S3 bucket (and URL) should we use? We need a setup similar to archive.mozilla.org. However archive.mozilla.org itself might not be suitable as we only want to save the last state of screenshots somewhere. Cloud services might have an opinion on that. See [bug 1402804](https://bugzilla.mozilla.org/show_bug.cgi?id=1402804) for a related request.
 
 [tc yml]: https://github.com/mozilla-mobile/focus-android/blob/master/.taskcluster.yml
 [tc yml tools]: https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39
