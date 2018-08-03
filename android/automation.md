@@ -4,8 +4,8 @@ Our Android projects share a similar automation model:
 - Taskcluster is our primary CI: we use it for as much automation as
 possible, including our core builds and releases, because it's a
 flexible first party service we can rely on.
-- Travis is secondary: we use it to get automation working quickly or get
-support for tools that won't work on Taskcluster.
+- Travis is secondary: we use it to get some automation tools working
+quickly but all tools should eventually migrate to Taskcluster.
 
 ## Taskcluster
 
@@ -32,7 +32,6 @@ great support for GitHub.
 
 We currently use Travis to:
 * Build, test and run code tools for all master commits and pull requests (including contributor PRs).
-* Execute sputnik for posting automated code feedback in pull requests
 * Execute codecov for monitoring our code coverage
 
 To see a travis configuration for your project, see `<project-root>/.travis.yml` (here's an
@@ -42,25 +41,21 @@ You can also find build logs on the travis website, e.g. for focus-android: http
 
 # Code quality tools
 
-For Java/Kotlin projects, we like to run the following tools:
-* findbugs
-* PMD
+For Kotlin only projects, run these tools:
 * Android lint
-* checkstyle
 * [detekt](https://github.com/arturbosch/detekt)
 * [ktlint](https://github.com/shyiko/ktlint)
+
+For projects that also include Java, add these tools:
+* checkstyle
+* findbugs
+* PMD
 
 To see what tools are currently run in automation for your project, see
 the project's `<project-root>/.taskcluster.yml`
 (here's an [example in focus-android][tc yml tools]).
 
 # Third-party services
-
-## Sputnik
-
-Sputnik (riggered from travis) runs findbugs, PMD and checkstyle on code attached to pull requests and posts in-line comments whenever violations are found.
-
-* https://sputnik.ci
 
 ## Codecov
 
