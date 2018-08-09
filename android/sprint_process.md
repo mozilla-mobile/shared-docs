@@ -22,7 +22,7 @@ Each project should link to its own triage queries (example: [focus-android](htt
 
 For more information on priority labels, [see below](#categorizing-issues).
 
-### Bug management (weekly)
+### Weekly bug planning (weekly)
 The full team meets to manage bugs. This meeting time-slot alternates between two separate agendas:
 
 #### Sprint planning
