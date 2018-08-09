@@ -9,9 +9,17 @@ If you run into trouble at any point, ask for help! Check out our
 [preferred communication channels.](./CONTRIBUTING.md#communication)
 
 Contents:
+- [Beginner's guides](#beginners-guides)
 - [Finding issues to work on](#finding-issues-to-work-on)
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Merging](#merging)
+
+## Beginner's guides
+Unfamiliar with the technology we use? No problem! We were once new to this
+too! Here are few guides we've compiled to help you get started:
+- [Android guide](android_guide.md)
+
+If these are confusing or if you have questions, please let us know!
 
 ## Finding issues to work on
 **New to Mozilla's mobile projects?** See issues labeled `good first issue` in your project's
