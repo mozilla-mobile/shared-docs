@@ -31,5 +31,12 @@ If you like staying up-to-date on the latest Android topics, members of our team
 Comfortable with the basics? Here are a few of our favorite resources to get started on intermediate topics.
 - [Android style tips](http://blog.danlew.net/2014/11/19/styles-on-android/) (circa 2014)
 
+### Licenses ###
+When adding a new license or updating an existing one, you need a list of libraries you're using so you can include their licenses. Most dependencies are included in the `build.gradla`e file, under `<dependencies>` but to get a complete list, you can run:
+
+`./gradlew app:dependencies > dependency-report.txt`
+
+This will include a tree of dependencies for all your build variants - usually you only need to look at the non-test Release variant in this list.
+
 [udacity course]: https://www.udacity.com/course/new-android-fundamentals--ud851
 [devdocs]: https://developer.android.com/docs/
