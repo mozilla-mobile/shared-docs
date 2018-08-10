@@ -26,6 +26,7 @@ If you like staying up-to-date on the latest Android topics, members of our team
   - Google IO
   - Android Developer Summit
   - Droidcon
+- Visiting local meetups
 
 ## Intermediate topics
 Comfortable with the basics? Here are a few of our favorite resources to get started on intermediate topics.
