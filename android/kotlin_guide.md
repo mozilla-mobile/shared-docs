@@ -1,0 +1,49 @@
+# Kotlin guide
+This guide is designed to help you get started with [Kotlin], the language we write most of our code in, and to introduce you to some intermediate topics.
+- [Getting Started](#getting-started)
+- [Staying Informed](#staying-informed)
+- [Intermediate Topics](#intermediate-topics)
+
+## Getting Started
+There are multiple ways to get started with Kotlin, depending on how you like to learn. If you like:
+- Reading documentation, the official Kotlin docs are good: start at [Basic Syntax] and work your way through the pages in the side bar
+- Learning while coding, try the [Kotlin Koans] online or in the IDE
+- Courses, try the official [Kotlin for Android Developers][course] course (note: none of our team members have tried this yet)
+- Reading books, try [Kotlin in Action]
+
+Once you've gained some basic familiarity with the language, you can gain more experience by:
+- Watching videos and conference talks on YouTube.
+- [Convert Java to Kotlin with the auto-converter][convert]and change the resulting code into idiomatic Kotlin
+- Doing coding exercises on [exercism.io](https://exercism.io/)
+- Working on Mozilla code ;)
+
+You should also take a look at the official style guides:
+- [Jetbrains](https://kotlinlang.org/docs/reference/coding-conventions.html)
+- [Android](https://android.github.io/kotlin-guides/)
+
+## Staying Informed
+If you like staying up-to-date on the latest Kotlin topics, members of our team recommend:
+- Reading blogs
+  - [Official Kotlin blog](https://blog.jetbrains.com/kotlin) (also has a newsletter)
+- Subscribing to weekly newsletters
+  - [Kotlin weekly](http://kotlinweekly.net/)
+- Visiting conferences (or watching their recordings)
+  - [KotlinConf](https://kotlinconf.com/)
+- Visiting local meetups
+
+## Intermediate Topics
+You can see what the Kotlin compiler is doing under the hood (e.g. is this lambda performant? What does it keep a reference to?) by using "Show Kotlin Bytecode" and then "Decompile" back to Java.
+
+### Coroutines
+The official documentation on coroutines is really good:
+- [kotlinx.coroutines by example](https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md)
+- [UI programming with coroutines](https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md) (read the first guide first)
+
+If you'd prefer to get started with videos, [this KotlinConf 2017 talk](https://www.youtube.com/watch?v=_hfBv0a09Jc) is a great place to get started.
+
+[Kotlin]: https://kotlinlang.org/
+[Basic Syntax]: https://kotlinlang.org/docs/reference/basic-syntax.html
+[Kotlin Koans]: https://kotlinlang.org/docs/tutorials/koans.html
+[course]: https://www.udacity.com/course/kotlin-for-android-developers--ud888
+[Kotlin in Action]: https://www.manning.com/books/kotlin-in-action
+[convert]: https://www.jetbrains.com/help/idea/converting-a-java-file-to-kotlin-file.html

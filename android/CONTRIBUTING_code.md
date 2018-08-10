@@ -18,6 +18,7 @@ Contents:
 Unfamiliar with the technology we use? No problem! We were once new to this
 too! Here are few guides we've compiled to help you get started:
 - [Android guide](android_guide.md)
+- [Kotlin guide](kotlin_guide.md)
 
 If these are confusing or if you have questions, please let us know!
 
