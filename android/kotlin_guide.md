@@ -8,6 +8,7 @@ This guide is designed to help you get started with [Kotlin], the language we wr
 There are multiple ways to get started with Kotlin, depending on how you like to learn. If you like:
 - Reading documentation, the official Kotlin docs are good: start at [Basic Syntax] and work your way through the pages in the side bar
 - Learning while coding, try the [Kotlin Koans] online or in the IDE
+  - If you do it in the IDE, we recommend using [IntelliJ Community Edition] with the [Kotlin Edu plugin]: educational plugins may not work in Android Studio yet
 - Courses, try the official [Kotlin for Android Developers][course] course (note: none of our team members have tried this yet)
 - Reading books, try [Kotlin in Action]
 
@@ -47,3 +48,5 @@ If you'd prefer to get started with videos, [this KotlinConf 2017 talk](https://
 [course]: https://www.udacity.com/course/kotlin-for-android-developers--ud888
 [Kotlin in Action]: https://www.manning.com/books/kotlin-in-action
 [convert]: https://www.jetbrains.com/help/idea/converting-a-java-file-to-kotlin-file.html
+[IntelliJ Community Edition]: https://www.jetbrains.com/idea/download/
+[Kotlin Edu plugin]: https://www.jetbrains.com/education/kotlin-edu/
