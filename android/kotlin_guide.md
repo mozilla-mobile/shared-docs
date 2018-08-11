@@ -15,7 +15,7 @@ There are multiple ways to get started with Kotlin, depending on how you like to
 Once you've gained some basic familiarity with the language, you can gain more experience by:
 - Watching videos and conference talks on YouTube.
 - [Convert Java to Kotlin with the auto-converter][convert]and change the resulting code into idiomatic Kotlin
-- Doing coding exercises on [exercism.io](https://exercism.io/)
+- Doing coding exercises on a site like [exercism.io](https://exercism.io/)
 - Working on Mozilla code ;)
 
 You should also take a look at the official style guides:
