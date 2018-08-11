@@ -6,8 +6,8 @@ This guide is designed to help you get started with [Kotlin], the language we wr
 
 ## Getting Started
 There are multiple ways to get started with Kotlin, depending on how you like to learn. If you like:
+- Learning while coding, try the [Kotlin Koans] online or in the IDE. Kotlin Koans are a series of exercises to get you familiar with the Kotlin syntax. Each exercise is created as a failing unit test and your job is to make it pass.
 - Reading documentation, the official Kotlin docs are good: start at [Basic Syntax] and work your way through the pages in the side bar
-- Learning while coding, try the [Kotlin Koans] online or in the IDE
   - If you do it in the IDE, we recommend using [IntelliJ Community Edition] with the [Kotlin Edu plugin]: educational plugins may not work in Android Studio yet
 - Courses, try the official [Kotlin for Android Developers][course] course (note: none of our team members have tried this yet)
 - Reading books, try [Kotlin in Action]
