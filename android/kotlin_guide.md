@@ -35,6 +35,8 @@ If you like staying up-to-date on the latest Kotlin topics, members of our team 
 ## Intermediate Topics
 You can see what the Kotlin compiler is doing under the hood (e.g. is this lambda performant? What does it keep a reference to?) by using "Show Kotlin Bytecode" and then "Decompile" back to Java.
 
+Writing Domain Specific Languages (DSLs) is a neat feature in Kotlin: there's a chapter near the end of Kotlin in Action if you want to read about it.
+
 ### Coroutines
 The official documentation on coroutines is really good:
 - [kotlinx.coroutines by example](https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md)
