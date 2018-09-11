@@ -11,6 +11,7 @@ There are multiple ways to get started with Kotlin, depending on how you like to
   - If you want to learn on the go, there's a good [Kotlin Koans Android app].
 - Reading documentation, the official Kotlin docs are good: start at [Basic Syntax] and work your way through the pages in the side bar
 - Reading books, try [Kotlin in Action]. If you're an SF employee, we have this on the bookshelf, as well as [Kotlin Programming: The Big Nerd Ranch Guide].
+- Comparing Swift & Kotlin: [Swift is like Kotlin](http://nilhcem.com/swift-is-like-kotlin/) This site provides a ton of examples of how Swift code looks in Kotlin. If you're comfortable with Swift (or moving from iOS development) this is a great resource for you!
 
 Once you've gained some basic familiarity with the language, you can gain more experience by:
 - Watching videos and conference talks on YouTube.
