@@ -31,6 +31,7 @@ If you like staying up-to-date on the latest Android topics, members of our team
 ## Intermediate topics
 Comfortable with the basics? Here are a few of our favorite resources to get started on intermediate topics.
 - [Android style tips](http://blog.danlew.net/2014/11/19/styles-on-android/) (circa 2014)
+- [Battery debugging](battery_debug.md)
 
 [udacity course]: https://www.udacity.com/course/new-android-fundamentals--ud851
 [devdocs]: https://developer.android.com/docs/
