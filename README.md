@@ -24,6 +24,7 @@ contributions, like QA, localization, and design, too!*
 *For an overview of our docs, see [`android/`](android/).*
 - [Focus for Android](https://github.com/mozilla-mobile/focus-android)
 - [Firefox for Fire TV](https://github.com/mozilla-mobile/firefox-tv)
+- [Firefox for Echo Show](https://github.com/mozilla-mobile/firefox-echo-show)
 - [Android Components](https://github.com/mozilla-mobile/android-components)
 
 ### Outside of mozilla-mobile
