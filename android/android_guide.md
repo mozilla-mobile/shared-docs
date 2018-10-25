@@ -31,6 +31,7 @@ If you like staying up-to-date on the latest Android topics, members of our team
 ## Intermediate topics
 Comfortable with the basics? Here are a few of our favorite resources to get started on intermediate topics.
 - [Android style tips](http://blog.danlew.net/2014/11/19/styles-on-android/) (circa 2014)
+- [Our Accessibility guide](accessibility_guide.md)
 
 ### Navigating the Android source code
 Oftentimes, it's easier to solve a problem when you understand how your code is interacting with the Android framework: you can do this by reading the Android source code! You can do plain-text searches on the Android source code at http://androidxref.com/ (choosing the latest API level and searching in the "frameworks" is usually sufficient).
