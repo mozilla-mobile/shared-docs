@@ -11,7 +11,7 @@ The [official Android accessibility overview](https://developer.android.com/guid
 Some general tips:
 - Look through the accessibility preferences in the Developer Options: there are many features, such as visual simulations, to help you.
 - If it is impossible to provide an intuitive, accessible user experience for your current UI, this is a design smell: a UI that is accessible tends to be the best experience for all users.
-    - For example, a dialog with one option, like "Remove", that is dismissed by clicking outside the dialog, will be unintuitive to screen reader users. However, this dialog may be unintuitive to users who are unfamiliar with common software paradigms (i.e. tap outside to dismiss) too. A better dialog would be one with a "dismiss" option in addition to "remove"
+    - For example, a dialog with one option, like "Remove", that is dismissed by clicking outside the dialog, will be unintuitive to screen reader users. However, this dialog may also be unintuitive to users who are unfamiliar with common software paradigms (i.e. tap outside to dismiss) too. A better dialog would be one with a "dismiss" option in addition to "remove"
 - Avoid creating separate code paths and user experiences to address accessibility issues: in our experience, accessibility is not often tested so it's easy to break the experience if you forget to update one code path
 
 ## Screen reader tips
