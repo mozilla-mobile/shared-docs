@@ -13,6 +13,7 @@ Contents:
 - [Finding issues to work on](#finding-issues-to-work-on)
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Merging](#merging)
+- [Writing tests](#writing-tests)
 
 ## Beginner's guides
 Unfamiliar with the technology we use? No problem! We were once new to this
@@ -87,6 +88,9 @@ by the core team. When merging, we use GitHub's "Rebase and merge":
 - We keep a linear git history for readability
 - We prefer incremental commits to remain in the history
   - It's easier to read, helps with bisection, and matches repo state during review.
+
+## Writing tests
+To learn more about how our tests are structured, see [testing.md](testing.md).
 
 [Community Participation Guidelines]: https://www.mozilla.org/en-US/about/governance/policies/participation/
 [fa good first]: https://github.com/mozilla-mobile/focus-android/labels/good%20first%20issue
