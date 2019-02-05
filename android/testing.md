@@ -8,11 +8,11 @@ The primary problem we try to solve with automated testing is preventing uninten
 ## Quick primer on automated testing
 Automated tests are typically broken up into the following categories:
 - End-to-End tests
-  - Black box tests that act like users: the system, they click the screen and assert what is displayed, typically following common user scenarios
+  - Black box tests that act like users: they click the screen and assert what is displayed, typically following common user scenarios
   - Notable for being **the only test of the full system.** Tend to **run slowly**, **be fragile**, and **be difficult to debug**
 - Integration tests
   - Tests comprising of multiple parts of the system: they can modify and assert internal state
-  - Compromise between end-to-end and unit tests. Tend to **run fairly quickly**
+  - Compromise between end-to-end and unit tests. Tend to **run fairly quickly** since, unlike UI tests, they don't need to wait for UI changes
 - Unit tests
   - Tiny tests that test one single bit of functionality; they typically don't overlap
   - When written with non-overlapping assertions across tests, notable for **clearly identifying a single piece of broken functionality in a system.** Tend to **run quickly**.
@@ -113,7 +113,7 @@ See [this FFTV example of MockWebServer][mockwebserver example].
 ## Best practices
 This section is intended to be a non-exhaustive list of high-level guidelines (not rules!) when testing.
 
-- Don't depend on external factors, like the network, to ensure pour tests are always reliable
+- Don't depend on external factors, like the network, to ensure your tests are always reliable
 - For unit testing your UI, architect your application to separate your model from your UI, e.g. with architectures like MVP, MVVM, and MVI. Without consciously separating these parts of your application, it may be too difficult to test
 - For UI testing, disable animations: Espresso's handling of them is mediocre
 - In addition to testing standard stuff like business logic and UI state, consider testing:
