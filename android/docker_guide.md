@@ -39,6 +39,8 @@ docker push mozillamobile/focus-android.
 
 Running this command requires that you have an account, are added to the "mozillamobile" organization, and have logged in via the command line: `docker login`. Ask :sebastian if you need to be added.
 
+Note: If there is a failure while building the docker image, this often comes from lack of memory.  Try increasing the memory and swap space on GUI and/or `-m 5g` build argument. 
+
 ## Debugging errors
 If you receive an error on TaskCluster that you can't reproduce locally, you may need to use Docker locally to reproduce the TaskCluster build environment.
 
