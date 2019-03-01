@@ -39,6 +39,8 @@ docker push mozillamobile/focus-android.
 
 Running this command requires that you have an account, are added to the "mozillamobile" organization, and have logged in via the command line: `docker login`. Ask :sebastian if you need to be added.
 
+Once the docker image is pushed, make sure your `taskcluster.yml` is referencing the new docker image with the correct tag number under `payload`.
+
 ## Debugging errors
 If you receive an error on TaskCluster that you can't reproduce locally, you may need to use Docker locally to reproduce the TaskCluster build environment.
 
