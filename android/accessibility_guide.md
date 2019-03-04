@@ -24,6 +24,21 @@ Some development tips:
     - Generally let the system handle focus changes: it's unintuitive when it jumps around.
 - Overriding the accessibility APIs in code is a code smell: generally, you can make the changes you need using the methods recommended in the docs, which provides a more maintainable and intuitive experience to users. Also note the code APIs are unintuitive and not well documented.
 
+### Cut out redundant steps with `android:importantForAccessibility="no"`
+Unintuitively, setting some views to not be important for accessibility improves accessibility.
+For example, take this layout that represents a menu item that consists of an image and text.
+```
+<LinearLayout>
+  <ImageView/>
+  <TextView/>
+</LinearLayout>
+```
+When a user swipes right past this composite view, the cursor will first land on the LinearLayout, and then on the TextView:
+<img alt="Animation of cursor landing menu items and their text children" src="https://github.com/mozilla-mobile/shared-docs/raw/master/android/images/double-nav.gif" width="240">
+
+This is both inefficient and confusing for the user, since they will encounter each item twice. To streamline this experience, set `android:importantForAccessibility="no"` on the `TextView`. This will tell TalkBack not to bother with that node:
+<img alt="Animation of cursor only landing on menu items" src="https://github.com/mozilla-mobile/shared-docs/raw/master/android/images/single-nav.gif" width="240">
+
 ## Automated testing
 You can regularly use [the Accessibility Scanner][scanner] to get a cursory overview of how the accessibility of your app is doing.
 
