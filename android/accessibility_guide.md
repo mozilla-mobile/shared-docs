@@ -42,6 +42,43 @@ This is both inefficient and confusing for the user, since they will encounter e
 ## Automated testing
 You can regularly use [the Accessibility Scanner][scanner] to get a cursory overview of how the accessibility of your app is doing.
 
-Unfortunately, we don't have much automated testing experience outside of this. However, this [official documentation](https://developer.android.com/training/accessibility/testing#automated) seems like a good starting point. If you find out more, please share with the team and consider updating this doc!
+When adding specialized accessibility logic, it is encouraged to add as much testing as possible since these code paths are not excercised in typical use and the chance of regression is high. Below is an example Mockito and Robolectric test that validates accessibility events that are resulted from a [loading progress update](https://github.com/mozilla-mobile/android-components/pull/2526).
+
+```kotlin
+@Test
+fun `displayProgress will send accessibility events`() {
+    val toolbar = BrowserToolbar(context)
+    val root = mock(ViewParent::class.java)
+    Shadows.shadowOf(toolbar).setMyParent(root)
+    `when`(root.requestSendAccessibilityEvent(any(), any())).thenReturn(false)
+
+    Shadows.shadowOf(context.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager).setEnabled(true)
+
+    toolbar.displayProgress(10)
+    toolbar.displayProgress(50)
+    toolbar.displayProgress(100)
+
+    val captor = ArgumentCaptor.forClass(AccessibilityEvent::class.java)
+
+    verify(root, times(4)).requestSendAccessibilityEvent(any(), captor.capture())
+
+    assertEquals(AccessibilityEvent.TYPE_ANNOUNCEMENT, captor.allValues[0].eventType)
+    assertEquals(context.getString(R.string.mozac_browser_toolbar_progress_loading), captor.allValues[0].text[0])
+
+    assertEquals(AccessibilityEvent.TYPE_VIEW_SCROLLED, captor.allValues[1].eventType)
+    assertEquals(10, captor.allValues[1].scrollY)
+    assertEquals(100, captor.allValues[1].maxScrollY)
+
+    assertEquals(AccessibilityEvent.TYPE_VIEW_SCROLLED, captor.allValues[2].eventType)
+    assertEquals(50, captor.allValues[2].scrollY)
+    assertEquals(100, captor.allValues[2].maxScrollY)
+
+    assertEquals(AccessibilityEvent.TYPE_VIEW_SCROLLED, captor.allValues[3].eventType)
+    assertEquals(100, captor.allValues[3].scrollY)
+    assertEquals(100, captor.allValues[3].maxScrollY)
+}
+```
+
+In addition the [official documentation](https://developer.android.com/training/accessibility/testing#automated) seems like a good starting point to learn more about accessibility validation in tests. We should look into integrating this into our CI.
 
 [scanner]: https://support.google.com/accessibility/android/answer/6376570?hl=en
