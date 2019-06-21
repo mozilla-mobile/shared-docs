@@ -22,7 +22,7 @@ Looking to see what we're up to or contribute? Check out one of our products:
 contributions, like QA, localization, and design, too!*
 
 *For an overview of our docs, see [`android/`](android/).*
-- [Firefox Preview] (https://github.com/mozilla-mobile/fenix)
+- [Firefox Preview](https://github.com/mozilla-mobile/fenix)
 - [Focus for Android](https://github.com/mozilla-mobile/focus-android)
 - [Firefox for Fire TV](https://github.com/mozilla-mobile/firefox-tv)
 - [Firefox for Echo Show](https://github.com/mozilla-mobile/firefox-echo-show)
