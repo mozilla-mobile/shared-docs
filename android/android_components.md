@@ -19,6 +19,6 @@
 4. Navigate to the downloaded directory "android-components" and click "Open".
 5. Keep all of the default options in the import wizard.
 
-The project should be built after you open it. You cdan check its status in the Build Tool Window.
+The project should start getting built once you open it. You can check its status in the Build Tool Window.
 
 See also https://github.com/mozilla-mobile/android-components.
