@@ -8,7 +8,7 @@
     2. Selecting "Configure."
     3. Selecting "Default Project Structure".
     4. You should now see the Android JDK location. (On OS X, mine is `/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home`.)
-3. Set the environment variable `JAVA_HOME` to eht path of the JDK. I did this on OS X by adding the line `# export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"` to `.bash_profile`.
+3. Set the environment variable `JAVA_HOME` to the path of the JDK. I did this on OS X by adding the line `# export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"` to `.bash_profile`.
 4. Close Android Studio.
 
 ## Installation ##
