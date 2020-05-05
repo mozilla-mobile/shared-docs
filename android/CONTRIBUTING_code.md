@@ -21,6 +21,7 @@ too! Here are few guides we've compiled to help you get started:
 - [Android guide](android_guide.md)
   - [Accessibility guide](accessibility_guide.md)
 - [Kotlin guide](kotlin_guide.md)
+- [Taskcluster guide](taskcluster_guide.md)
 
 If these are confusing or if you have questions, please let us know!
 
