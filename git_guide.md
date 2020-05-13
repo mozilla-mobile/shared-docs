@@ -18,5 +18,5 @@ Let's make your first contribution using some simple steps and learning some com
 - [Make your contribution](https://github.com/firstcontributions/first-contributions)
 
 ## Good first bugs
-Now, you have learned how to make contribution then try some of our easy buge for you.
+Now, you have learned how to make contribution then try some of our easy bugs for you.
 - [good first](https://github.com/mozilla-mobile/shared-docs/contribute)
