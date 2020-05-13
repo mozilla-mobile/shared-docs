@@ -6,7 +6,7 @@ This guide is designed to help you get started with git and use its basics comma
 - [Good first bugs](#good-first-bugs)
 
 ## Getting started
-To get started with git,first install git from the given link or if you have already installed it then update to its latest version.
+To get started with git, first install git from the given link or if you have already installed it then update to its latest version.
 - [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 After installing git successfully, make a account at github.
