@@ -18,6 +18,7 @@ Contents:
 ## Beginner's guides
 Unfamiliar with the technology we use? No problem! We were once new to this
 too! Here are few guides we've compiled to help you get started:
+- [Git guide](git_guide.md)
 - [Android guide](android_guide.md)
   - [Accessibility guide](accessibility_guide.md)
 - [Kotlin guide](kotlin_guide.md)
