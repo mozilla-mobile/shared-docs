@@ -19,4 +19,5 @@ Let's make your first contribution using some simple steps and learning some com
 
 ## Good first bugs
 Now, you have learned how to make contribution then try some of our easy bugs for you.
-- [good first](https://github.com/mozilla-mobile/shared-docs/contribute)
+- [Our tips for finding easy bugs](https://github.com/mozilla-mobile/shared-docs/blob/master/android/CONTRIBUTING_code.md#finding-issues-to-work-on)
+- [fenix `good first issue`s](https://github.com/mozilla-mobile/fenix/labels/good%20first%20issue)
