@@ -2,14 +2,14 @@
 
 This guide is designed to help you get started with [Taskcluster](https://firefox-ci-tc.services.mozilla.com/), the Continuous Integration system we use, and to introduce you to some intermediate topics.
 - [Getting Started](#getting-started)
-- [HOWTOs](#howtos)
+- [FAQ and HOWTOs](#faq-and-howtos)
 
 ## Getting Started
 Are you totally new to Taskcluster or Taskgraph? Check out this [3-minute-video](https://johanlorenzo.github.io/blog/2019/10/24/taskgraph-is-now-deployed-to-the-biggest-mozilla-mobile-projects.html). If you want an overview of Taskgraph, you can read the blog post attached to it.
 
 If you have any questions regarding Taskcluster or Taskgraph, feel free to join #releaseduty-mobile on Mozilla's Slack instance.
 
-## HOWTOs
+## FAQ and HOWTOs
 
 ### How do I test some changes I make under the `taskcluster/` folder?
 
@@ -24,17 +24,30 @@ The easy way: create a PR and you will get results in minutes. If you want to te
   * [reference-browser](https://treeherder.mozilla.org/#/jobs?repo=reference-browser)
 * More generally: the status badge attached to each commit on Github will point you to each task run. For instance, here is a link to one of Fenix's release branch: https://github.com/mozilla-mobile/fenix/commits/releases/v5.0
 
+### Why is my PR taking much longer than usual? What is this toolchain task?
+
+Major mobile projects now cache external dependencies in a Taskcluster artifact. We implemented this solution because some maven repositories couldn't keep up with the load we required from them. This also puts us one step closer to having reproducible builds.
+The cache gets rebuilt if [any of these files](https://github.com/mozilla-mobile/fenix/blob/7974a5c77c82915ce64faa6c403c0feadd7d6580/taskcluster/ci/toolchain/android.yml#L43-L47) change. Otherwise, build tasks just reuse the right cache: taskgraph is smart enough to know which existing one to use, we call this kind of tasks `toolchain`.
+Sadly, there is no way to ask gradle to just download dependencies - we have to **compile everything**. This is why such task can be really long. We will address the slowness of fenix in https://github.com/mozilla-mobile/fenix/issues/10910.
+
 ### How do I find the latest nightly?
 
 If you are interested in just getting the latest APKs, use these links:
-  * [fenix](https://firefox-ci-tc.services.mozilla.com/tasks/index/project.mobile.fenix.v2.nightly/latest)
+  * [fenix](https://firefox-ci-tc.services.mozilla.com/tasks/index/mobile.v2.fenix.nightly.latest) (choose the architecture you are interested in)
   * [android-components](https://firefox-ci-tc.services.mozilla.com/tasks/index/mobile.v2.android-components.nightly.latest) (choose the component you are interested in)
-  * [reference-browser](https://firefox-ci-tc.services.mozilla.com/tasks/index/project.mobile.reference-browser.v3.nightly/latest)
+  * [reference-browser](https://firefox-ci-tc.services.mozilla.com/tasks/index/mobile.v2.reference-browser.nightly.latest) (choose the architecture you are interested in)
 
 If you want to understand why something is wrong with nightly:
  1. click on one of the aforementioned Treeherder links
  1. type `nightly` in the search bar at the top right corner and press `Enter` => this will filter out any non-nightly job
  1. check if there are any non-green jobs. If none are displayed, do not hesitate to load more results by clicking on one of the `get next` buttons.
+
+### How do I rerun jobs?
+
+* On pull requests: just close and reopen the PR, the full task graph will be retriggered. (You cannot rerun individual tasks while [bug 1641282](https://bugzilla.mozilla.org/show_bug.cgi?id=1641282) is not fixed)
+* Otherwise: on the taskcluster UI, when looking at a task, go to the bottom right corner and select "Rerun". If it doesn't work, please contact the Release Engineering team (#releaseduty-mobile on Slack)
+
+If you hesitate between reruns and retriggers, choose `rerun` first, then `retrigger` if the former failed.
 
 ### How do I run a staging nightly/release on PRs?
 
