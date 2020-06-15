@@ -50,7 +50,7 @@ Our team follows [the GitHub pull request workflow][gh workflow]: fork, branch, 
 pull request, automated tests, review, merge. If you're new to GitHub, check out [the official
 guides][gh guides] for more information.
 
-An example commit message summary looks like, `Closes #5: Upgrade gradle to v1.3.0`.
+An example commit message summary looks like, `For #5: Upgrade gradle to v1.3.0`.
 
 Please follow these guidelines for your pull requests:
 
@@ -65,6 +65,8 @@ the issue you're fixing.*
 intended to fix.
   - If your PR closes an issue, include `Closes #...` in one of your commit messages. This
   will automatically close the linked issue ([more info][auto close]).
+  - If your PR has to go through a longer process, for example QA verification, use the 
+  `For #...` syntax to allow the linked issue to be closed at a later, more appropriate time.
 - Prefer "micro commits".
   - A micro commit is a small commit that generally changes one thing.
   A single Pull Request may comprise of multiple incremental micro commits.
