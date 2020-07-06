@@ -12,6 +12,8 @@ Once you have a little experience, the beginner's guides in the [official Androi
 
 There are also many good Android tips and conference talks on YouTube.
 
+You may wish to see [our guide for properly configuring Java](configure_java.md) to properly set up command line tools.
+
 ## Staying informed
 If you like staying up-to-date on the latest Android topics, members of our team recommend:
 - Reading blogs
