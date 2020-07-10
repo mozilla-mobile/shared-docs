@@ -103,7 +103,12 @@ Mockito cannot be used to mock static methods. In these cases, you can also incl
 
 See [this FFTV example of Mockito][mockito example].
 
-Mockito does not interact well with Kotlin so we are considering alternatives.
+Mockito does not interact well with Kotlin so we are considering alternatives, such as:
+
+#### MockK: alternate mocking framework
+[MockK] is a popular **mocking framework for Kotlin:** it includes mock, spy, and call count verification support that better aligns with Kotlin APIs. It can **mock static methods, extension functions, and objects**. We have documentation written for [using MockK](https://notwoods.github.io/mockk-guidebook/) and [transitioning from Mockito](https://notwoods.github.io/mockk-guidebook/docs/mockito-migrate/).
+
+See [this Fenix example of MockK][mockk example].
 
 #### MockWebServer: mock network interactions
 The network is unreliable so it should be avoided during testing. Instead, you can use **[MockWebServer] to provide your own data from "the network".** You access it by making your calls to the URL it returns. This lets it work with `WebView`s.
@@ -132,6 +137,7 @@ Members of our team recommend, ["Working Effectively with Legacy Code"][legacy c
 
 [JUnit]: https://junit.org/junit4/
 [Mockito]: https://site.mockito.org/
+[MockK]: https://mockk.io/
 [PowerMock]: https://github.com/powermock/powermock
 [MockWebServer]: https://github.com/square/okhttp/tree/master/mockwebserver
 
@@ -141,6 +147,7 @@ Members of our team recommend, ["Working Effectively with Legacy Code"][legacy c
 [robot example]: https://github.com/mozilla-mobile/firefox-tv/blob/f27a206cbee0e9bc7c9df9c4e93aae88198d211a/app/src/androidTest/java/org/mozilla/tv/firefox/ui/BasicNavigationTest.kt#L50
 [robolectric example]: https://github.com/mozilla-mobile/firefox-tv/blob/dd236b03560c3c438cb2c674f3c453f877e79bf5/app/src/test/java/org/mozilla/tv/firefox/ext/ContextTest.kt#L15
 [mockito example]: https://github.com/mozilla-mobile/firefox-tv/blob/11b9eb7be32787ebf919884a74a15d07781b4640/app/src/test/java/org/mozilla/tv/firefox/ext/AssetManagerTest.kt#L30
+[mockk example]: https://github.com/mozilla-mobile/fenix/blob/6bde0378a223b74f9c22e5e664a250ff7534dc11/app/src/test/java/org/mozilla/fenix/ext/ContextTest.kt#L104
 [mockwebserver example]: https://github.com/mozilla-mobile/firefox-tv/blob/4e8c9923dd6016ece5830d1eaaf58c1761d8e57f/app/src/androidTest/java/org/mozilla/tv/firefox/ui/IWebViewExecuteJavascriptTest.kt#L41
 
 [Frictionless Android Testing]: https://www.youtube.com/watch?v=wYMIadv9iF8
