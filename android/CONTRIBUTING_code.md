@@ -22,6 +22,7 @@ too! Here are few guides we've compiled to help you get started:
 - [Android guide](android_guide.md)
   - [Accessibility guide](accessibility_guide.md)
 - [Kotlin guide](kotlin_guide.md)
+- [Writing custom lint rules guide](writing_lint_rules.md)
 - [Taskcluster guide](taskcluster_guide.md)
 - [MockK guide](https://notwoods.github.io/mockk-guidebook/)
 
