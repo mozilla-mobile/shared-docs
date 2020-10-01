@@ -44,9 +44,16 @@ TODO: fill this out!
 We haven't written any ktlint rules so we're lacking knowledge here.
 
 ## Android Lint
-TODO: fill this out!
+Custom Android lint checks are a great way to prohibit or warn about usages of certain classes and resources in a codebase and can be customized to give alternative suggestions. 
 
-We have some Android Lint expertise on the team but still have to document it.
+To add a lint check:
+- Create a custom Detector that will scour the codebase for Issues to report (and add tests!)
+- Make sure to be specific for which resource files we want to even look at using `appliesTo` and which elements in those files we care about using `getApplicableElements`
+- Add the new detector to the LintIssueRegistry.kt file
+
+Here's [an example PR](https://github.com/mozilla-mobile/android-components/pull/6112) where lint rules are added (and tested!) to check XML files for incorrect usage.
+
+Here's a good [conference talk](https://www.droidcon.com/media-detail?video=380845392) about adding your own custom lint rules and an accompanying [repo](https://github.com/alexjlockwood/android-lint-checks-demo) with some great examples of what lint checks can do.
 
 ## Gradle tasks + hand-rolled check
 You can create Gradle tasks that, for example:
