@@ -20,7 +20,7 @@ Have another idea for how you can contribute? Let us know!
 For each our projects, we communicate with the project's:
 - Issues tracker
 - Mailing list
-- [IRC](https://wiki.mozilla.org/IRC) channel. *We're available Monday-Friday
+- [Matrix Fenix](https://chat.mozilla.org/#/room/#fenix:mozilla.org) channel. *We're available Monday-Friday
 during GMT and PST working hours.*
 
 **Be sure to join them** and don't be afraid to make postings of your
