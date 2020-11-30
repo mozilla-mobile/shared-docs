@@ -49,9 +49,13 @@ If you want to understand why something is wrong with nightly:
 
 If you hesitate between reruns and retriggers, choose `rerun` first, then `retrigger` if the former failed.
 
-### How do I run a staging nightly/release on PRs?
+### How do I run a staging nightly/beta/release on PRs?
 
-It is easy! Just create a new file called `try_task_config.json` at the root of the repository and it will change what graph taskgraph generates. For instance
+It is easy! Just create a new file called `try_task_config.json` at the root of the repository and it will change what graph taskgraph generates.
+
+⚠️ Do not forget to remove this file before merging your patch.
+
+#### Nightly
 
 ```json
 {
@@ -63,9 +67,37 @@ It is easy! Just create a new file called `try_task_config.json` at the root of 
 }
 ```
 
-will generate a nightly graph on your PR. You can know what `target_tasks_method` to provide by looking at the `@_target_task()` sections in `target_tasks.py`. E.g: [target_tasks.py in Fenix](https://github.com/mozilla-mobile/fenix/blob/824dedb19588a9052b03ad162155c62ecd08e316/taskcluster/fenix_taskgraph/target_tasks.py#L29).
+will generate a nightly graph on your PR.
 
-⚠️ Do not forget to remove this file before merging your patch.
+#### Beta
+
+```json
+{
+    "parameters": {
+        "optimize_target_tasks": true,
+        "release_type": "beta",
+        "target_tasks_method": "release"
+    },
+    "version": 2
+}
+```
+
+#### Release
+
+```json
+{
+    "parameters": {
+        "optimize_target_tasks": true,
+        "release_type": "release",
+        "target_tasks_method": "release"
+    },
+    "version": 2
+}
+```
+
+
+#### More generally
+You can know what `target_tasks_method` to provide by looking at the `@_target_task()` sections in `target_tasks.py`. E.g: [target_tasks.py in Fenix](https://github.com/mozilla-mobile/fenix/blob/824dedb19588a9052b03ad162155c62ecd08e316/taskcluster/fenix_taskgraph/target_tasks.py#L29).
 
 ### Why don't PRs open by external contributors get Tasckluster jobs?
 
