@@ -98,3 +98,10 @@ will generate a nightly graph on your PR.
 
 #### More generally
 You can know what `target_tasks_method` to provide by looking at the `@_target_task()` sections in `target_tasks.py`. E.g: [target_tasks.py in Fenix](https://github.com/mozilla-mobile/fenix/blob/824dedb19588a9052b03ad162155c62ecd08e316/taskcluster/fenix_taskgraph/target_tasks.py#L29).
+
+### Why don't PRs open by external contributors get Tasckluster jobs?
+
+Long story short: It's because of a limitation of the Taskcluster security model. More details in this [Bugzilla bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1534764).
+2 workarounds:
+  a. A person with write access on the repo opens a 2nd PRs with the same patch. This will trigger TC as usual.
+  b. If the repository has bors enabled, first make sure the PR doesn't do anything suspicious, then comment `bors try` on the PR. [Bors](https://bors.tech/) will run Taskcluster jobs on an integration branch.
