@@ -105,3 +105,15 @@ Long story short: It's because of a limitation of the Taskcluster security model
 2 workarounds:
   a. A person with write access on the repo opens a 2nd PRs with the same patch. This will trigger TC as usual.
   b. If the repository has bors enabled, first make sure the PR doesn't do anything suspicious, then comment `bors try` on the PR. [Bors](https://bors.tech/) will run Taskcluster jobs on an integration branch.
+
+
+### How do I get secrets/tokens baked into an APK?
+
+We use Taskcluster secrets to store secrets and tokens that will be injected into APKs. See [this pull request](https://github.com/mozilla-mobile/fenix/pull/7772) as an example. Steps are:
+
+1. Implement a similar code based on the PR mentioned just before.
+1. Tell a member of the Release Engineering team you would like to add a new secret.
+1. Securely send the secret by following [one of these methods](https://mana.mozilla.org/wiki/display/SVCOPS/Sharing+a+secret+with+a+coworker)
+1. For Releng:
+    1. Go to https://firefox-ci-tc.services.mozilla.com/secrets/?search=fenix
+    1. Edit existing secrets to include the new key and the new (unencrypted) value. Key is the [first value of this tuple](https://github.com/mozilla-mobile/fenix/pull/7772/files#diff-99b25bd5c02b53ff6a6260f416305b52533dfd3f70e0c2627a561f375cab3339R50). Value is the secret it self. You usually want to edit the `nightly`, `beta`, and `release` secrets. `nightly-simulation` should be edited too but with dummy values.
