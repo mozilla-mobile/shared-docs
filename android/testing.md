@@ -42,6 +42,8 @@ Users run your code on Android devices so testing on these devices is **the most
 - Reproducing the behavior on device is critical
 - The tests cannot be written accurately for the JVM (e.g. UI)
 
+See [Physical Device Testing](device_testing.md) for how to leverage available physical devices.
+
 #### Espresso and UI Automator: core UI testing libraries
 [Espresso] and [UI Automator] are Google's core UI testing libraries on Android: they provide APIs to select views, perform actions on them, and assert state without reaching into implementation details.
 
