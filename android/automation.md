@@ -4,8 +4,7 @@ Our Android projects share a similar automation model:
 - Taskcluster is our primary CI: we use it for as much automation as
 possible, including our core builds and releases, because it's a
 flexible first party service we can rely on.
-- Travis is secondary: we use it to get some automation tools working
-quickly but all tools should eventually migrate to Taskcluster.
+- GitHub Actions is secondary: it runs some regular tasks or a subset of tests for pull requests.
 
 ## Taskcluster
 
@@ -25,19 +24,18 @@ To see a Taskcluster configuration for your project, see
 Taskcluster runs using docker: see our [docker guide](docker_guide.md) for
 more information.
 
-## Travis
+## GitHub Actions
 
-[Travis] is an easy-to-configure continuous integration environment with
-great support for GitHub.
+[GitHub Actions][gha] is GitHub's own CI/CD service.
 
-We currently use Travis to:
-* Build, test and run code tools for all master commits and pull requests (including contributor PRs).
-* Execute codecov for monitoring our code coverage
+We currently use GitHub Actions to:
+* Build, test and run code tools for pull requests (including contributor PRs).
+* Automatically update dependencies & synchronize localization files
+* Automatically adding additional labels to new issues
 
-To see a travis configuration for your project, see `<project-root>/.travis.yml` (here's an
-[example in focus-android][travis yml]).
+To see the GitHub Actions configuration for your project, see `<project-root>/.github/workflows` (here's an [example in Fenix][gha-fenix]).
 
-You can also find build logs on the travis website, e.g. for focus-android: https://travis-ci.org/mozilla-mobile/focus-android
+You can find the workflows and builds logs under the "Actions" tab of each project.
 
 # Code quality tools
 
@@ -121,5 +119,5 @@ We hope to improve this process soon.
 [tc yml]: https://github.com/mozilla-mobile/focus-android/blob/master/.taskcluster.yml
 [tc yml tools]: https://github.com/mozilla-mobile/focus-android/blob/38f79e25493ab08b8322cd4c059891f37fbf500f/.taskcluster.yml#L39
 [tc]: https://docs.taskcluster.net/docs
-[travis]: https://travis-ci.org/
-[travis yml]: https://github.com/mozilla-mobile/focus-android/blob/master/.travis.yml
+[gha]: https://github.com/features/actions
+[gha-fenix]: https://github.com/mozilla-mobile/fenix/tree/main/.github/workflows
