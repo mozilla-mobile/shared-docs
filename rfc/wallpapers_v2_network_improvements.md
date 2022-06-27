@@ -1,6 +1,5 @@
 * Start date: 2022-06-21
-* RFC PR: #TODO
-
+* RFC PR: [#112](https://github.com/mozilla-mobile/shared-docs/pull/112)
 ---
 
 ## Summary
@@ -26,9 +25,7 @@ This directory structure was confusing and difficult to manage. Copying several 
 was painful, even when automated. Automation would require consistent file naming for each new set of wallpapers, which can
 be hard to guarantee. 
 
-Downloads were started automatically during app startup if a wallpaper was missing.
-
-The files were also hosted by another Mozillian team, which may introduce complexity in terms of ownership or cost.
+Additionally, downloads were started automatically during app startup if a wallpaper was missing.
 
 In general, we would like to achieve the following goals:
 
@@ -37,14 +34,13 @@ In general, we would like to achieve the following goals:
 - download is transparent to the user
 - download is activated by the user
 - require less bandwidth, if possible
-- hosted in a more permanent, team-controlled location
 
 ---
 
 ## Guide-level explanation
 
 Instead of relying on an (undocumented) convention for file paths, wallpaper metadata will be contained in a top-level JSON schema.
-Using a well-known format will help discoverability, and JSON's extensiblility should allow for simpler long-term maintenance. 
+Using a well-known format will help discoverability, and JSON's flexibility should allow for simpler long-term maintenance. 
 It can also provide a more direct path to any required automation. This schema could define things like:
 
 - Android file path(s)
@@ -52,8 +48,26 @@ It can also provide a more direct path to any required automation. This schema c
 - thumbnail path(s)
 - average color (for text and background coloring purposes)
 - collection grouping for things like seasonal promotions
-- wallpaper expiration date
+- wallpaper availability range
 - wallpaper region availability
+
+An example might look like the following:
+```json
+{
+    "name": "Sunset",
+    "android-file-paths": ["android/path/to/sunset.svg"],
+    "android-thumbnail-path": "android/path/to/sunset-thumbnail.svg",
+    "iOS-file-paths": ["ios/path/to/sunset/high-resolution.pdf", "ios/path/to/sunset/low-resolution.pdf"],
+    "iOS-thumbnail-path": "ios/path/to/sunset-thumbnail.pdf",
+    "average-color": "0xADD8E6",
+    "available-locales": ["en-US", "es-US", "en-CA", "fr-CA"],
+    "availability-range": {
+        "start": "2022-06-27",
+        "end": "2022-09-30"
+    },
+    "collections": ["MR-2022", "FX-100"]
+}
+```
 
 We will likely continue to ship some small number of wallpapers as part of our app binaries. This ensures that at least a few wallpapers are available for onboarding. We could also
 just ship a few thumbnails and require users to download the wallpaper they are interested in once they reach the wallpaper settings page.
@@ -66,4 +80,9 @@ display some kind of action overlay above the thumbnails indicating that clickin
 
 ## Drawbacks
 
-- Maintenance burden of owning the hosting solution
+- JSON becomes tied to app versions. Adding or changing fields could mean that older versions of the app are no longer able to parse the schema.
+
+## Rationale and alternatives
+
+- Generally, JSON is still parsable even if new fields are added, and old versions of the app wouldn't know what to do with new fields anyway. Updating the types of fields would lead more directly to problems. In those cases it would always be possible to add a new field instead, but this could create quite a lot of noise in the definition. Even if clients fail to fetch the latest metadata, it's quite possible users have downloaded the subset of wallpapers they are interested in already.
+- Alternatively, we could introduce versioned schema that could be easily tied to client-side upgrades. For example, a list of JSON files like: `json/v1.json`, `json/v2.json`, etc.
