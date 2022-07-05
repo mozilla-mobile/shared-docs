@@ -51,26 +51,34 @@ It can also provide a more direct path to any required automation. This schema c
 - wallpaper availability range
 - wallpaper region availability
 
-An example might look like the following:
+This is not a finalized spec, but an example might look like the following:
 ```json
 {
-    "name": "Sunset",
-    "android-file-paths": ["android/path/to/sunset.svg"],
-    "android-thumbnail-path": "android/path/to/sunset-thumbnail.svg",
-    "iOS-file-paths": ["ios/path/to/sunset/high-resolution.pdf", "ios/path/to/sunset/low-resolution.pdf"],
-    "iOS-thumbnail-path": "ios/path/to/sunset-thumbnail.pdf",
-    "average-color": "0xADD8E6",
-    "available-locales": ["en-US", "es-US", "en-CA", "fr-CA"],
-    "availability-range": {
-        "start": "2022-06-27",
-        "end": "2022-09-30"
-    },
-    "collections": ["MR-2022", "FX-100"]
+    "last-updated-date": "2022-01-01",
+    "collections": [
+        {
+            "name": "McCollectionFace",
+            "available-locales": ["en-US", "es-US", "en-CA", "fr-CA"],
+            "availability-range": {
+                "start": "2022-06-27",
+                "end": "2022-09-30"
+            },
+            "wallpapers": [
+                {
+                    "name": "Sunset",
+                    "android-file-paths": ["android/path/to/sunset.svg"],
+                    "android-thumbnail-path": "android/path/to/sunset-thumbnail.svg",
+                    "iOS-file-paths": ["ios/path/to/sunset/high-resolution.pdf", "ios/path/to/sunset/low-resolution.pdf"],
+                    "iOS-thumbnail-path": "ios/path/to/sunset-thumbnail.pdf",
+                    "average-color": "0xADD8E6",
+                }
+            ]
+        }
+    ]
 }
 ```
 
-We will likely continue to ship some small number of wallpapers as part of our app binaries. This ensures that at least a few wallpapers are available for onboarding. We could also
-just ship a few thumbnails and require users to download the wallpaper they are interested in once they reach the wallpaper settings page.
+We will likely continue to ship some small number of wallpapers as part of our app binaries. This ensures that at least a few wallpapers are available for onboarding. Thumbnails for onboarding wallpapers and non-onboarding wallpapers may also be included.
 
 Additionally, including thumbnails will allow clients to keep download size relatively small. Thumbnails will need to follow the current eager downloading strategy
 that wallpapers currently do. This will allow thumbnails to be decoupled from app releases, but they will still be visible when the settings page is open. The current suggestion is to
