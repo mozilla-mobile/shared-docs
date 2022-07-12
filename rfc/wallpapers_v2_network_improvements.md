@@ -4,26 +4,18 @@
 
 ## Summary
 
-The wallpapers feature was introduced on Android and iOS in v98 during Q1 2022. 
-Due to late scope changes, a networking solution was quickly put together
-in allow for delivering wallpapers from a remote source. As part of a
-larger set of improvements planned for Q3 2022, it is intended to revisit
-this implementation to create a more scalable version.
+The wallpapers feature was introduced on Android and iOS in v98 during Q1 2022. Due to late scope changes, a networking solution was quickly put together for delivering wallpapers from a remote source. As part of a larger set of improvements planned for Q3 2022, it is intended to revisit this implementation to create a more scalable version.
 
 ---
 
 ## Motivation
 
-The original version of the networking solution consisted of
-adding wallpaper image files to deeply nested directories which defined the properties
-of the wallpaper. For example, an Android wallpaper might be found at:
+The original version of the networking solution consisted of adding wallpaper image files to deeply nested directories which defined the properties of the wallpaper. For example, an Android wallpaper might be found at:
 ```
 <root>/mobile-wallpapers/android/<resolution>/<orientation>/<light/dark>/<wallpaper collection>/<wallpaper name>
 ```
 
-This directory structure was confusing and difficult to manage. Copying several versions of a file to different locations
-was painful, even when automated. Automation would require consistent file naming for each new set of wallpapers, which can
-be hard to guarantee. 
+This directory structure was confusing and difficult to manage. Copying several versions of a file to different locations was painful, even when automated. Automation would require consistent file naming for each new set of wallpapers, which can be hard to guarantee. 
 
 Additionally, downloads were started automatically during app startup if a wallpaper was missing.
 
@@ -39,9 +31,7 @@ In general, we would like to achieve the following goals:
 
 ## Guide-level explanation
 
-Instead of relying on an (undocumented) convention for file paths, wallpaper metadata will be contained in a top-level JSON schema.
-Using a well-known format will help discoverability, and JSON's flexibility should allow for simpler long-term maintenance. 
-It can also provide a more direct path to any required automation. This schema could define things like:
+Instead of relying on an (undocumented) convention for file paths, wallpaper metadata will be contained in a top-level JSON schema. Using a well-known format will help discoverability, and JSON's flexibility should allow for simpler long-term maintenance. It can also provide a more direct path to any required automation. This schema could define things like:
 
 - Android file path(s)
 - iOS file path(s)
@@ -80,9 +70,7 @@ This is not a finalized spec, but an example might look like the following:
 
 We will likely continue to ship some small number of wallpapers as part of our app binaries. This ensures that at least a few wallpapers are available for onboarding. Thumbnails for onboarding wallpapers and non-onboarding wallpapers may also be included.
 
-Additionally, including thumbnails will allow clients to keep download size relatively small. Thumbnails will need to follow the current eager downloading strategy
-that wallpapers currently do. This will allow thumbnails to be decoupled from app releases, but they will still be visible when the settings page is open. The current suggestion is to
-display some kind of action overlay above the thumbnails indicating that clicking them will cause a download.
+Additionally, including thumbnails will allow clients to keep download size relatively small. Thumbnails will need to follow the current eager downloading strategy that wallpapers currently do. This will allow thumbnails to be decoupled from app releases, but they will still be visible when the settings page is open. The current suggestion is to display some kind of action overlay above the thumbnails indicating that clicking them will cause a download.
 
 ---
 
