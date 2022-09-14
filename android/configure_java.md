@@ -14,7 +14,7 @@ Caveat: Robolectric warns that Java 9 is needed for certain functionality. This 
 ### Method #1: configure Java 8 from Android Studio
 Do the following:
 * Download and install Android Studio
-* Add the following line to your `~/.zshrc` or equivalent shell startup file: `export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"`
+* Add the following line to your `~/.zshrc` or equivalent shell startup file: `export JAVA_HOME="/Applications/Android Studio.app/Contents/**/Contents/Home"`
   * Update the path if you installed Android Studio to a non-standard location
 
 That's it! To verify correctness, open a new shell, navigate to a directory with Android source code, and type `./gradlew tasks`.
