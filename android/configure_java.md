@@ -30,7 +30,7 @@ brew install java11
 
 ### Method #3: install from website
 You can install Java from
-[Oracle]([url](https://www.oracle.com/java/technologies/downloads/#java8-mac))
+[Oracle](https://www.oracle.com/java/technologies/downloads/#java8-mac)
 using this link.
 
 Installing the JDK:
