@@ -38,7 +38,7 @@ Installing the JDK:
 * Download the package named `jdk-8u341-macosx-x64.dmg`. Oracle requires you to
   make an account in order to install the JDK. Follow the instructions and
   confirm your email.
-* Open your `.dmg` install and follow the installation wizard.
+* Launch your `.dmg` installer and follow the installation wizard.
 * Add the following line to your `~/.zshrc` or equivalent shell startup file: `export JAVA_HOME=$(/usr/libexec/java_home)`
 
 That's it! As explained in Method #1, `$JAVA_HOME` is the environment variable
