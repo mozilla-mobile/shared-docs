@@ -42,6 +42,7 @@ Installing the JDK:
 * Add the following line to your `~/.zshrc` or equivalent shell startup file: `export JAVA_HOME=$(/usr/libexec/java_home)`
 
 That's it! To verify correctness, open a new shell, navigate to a directory with Android source code, and type `./gradlew tasks`.
+
 As explained in Method #1, `$JAVA_HOME` is the environment variable
 in UNIX environments that points to your JDK installation.
 `/usr/libexec/java_home` is a symbolic link that points to matching Java VMs
