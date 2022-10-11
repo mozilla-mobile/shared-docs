@@ -48,6 +48,11 @@ in UNIX environments that points to your JDK installation.
 `/usr/libexec/java_home` is a symbolic link that points to matching Java VMs
 installed in your environment.
 
+If you are having trouble, please make sure to read this [Java
+Doc](https://www.java.com/en/download/help/mac_install.html) on how to install
+Java on your machine. Although this documentation highlights how to install the
+JRE, installing the JDK follows the same steps.
+
 ## Troubleshooting
 ### Get Java version
 To see what version of Java you have installed, run:
