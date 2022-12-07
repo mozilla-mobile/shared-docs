@@ -20,7 +20,7 @@ If you like staying up-to-date on the latest Android topics, members of our team
   - [Official Android developer blog](https://android-developers.googleblog.com/) (also has a newsletter)
 - Subscribing to weekly newsletters
   - [Android weekly](https://androidweekly.net/)
-  - [Android dev digest](https://www.androiddevdigest.com/)
+  - [Jetpack Compose Newsletter by Commonsware](https://jetc.dev/)
 - Listening to podcasts
   - [Fragmented](http://fragmentedpodcast.com/)
   - [Android Developers Backstage](https://androidbackstage.blogspot.com/)
