@@ -10,6 +10,7 @@ If you run into trouble at any point, ask for help! Check out our
 
 Contents:
 - [Beginner's guides](#beginners-guides)
+- [Configuring Android Studio](#configuring-android-studio)
 - [Finding issues to work on](#finding-issues-to-work-on)
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Merging](#merging)
@@ -27,6 +28,9 @@ too! Here are few guides we've compiled to help you get started:
 - [MockK guide](https://notwoods.github.io/mockk-guidebook/)
 
 If these are confusing or if you have questions, please let us know!
+
+## Configuring Android Studio
+We don't allow wildcard imports (ex: `import kotlinx.coroutines.*`) so we recommend preventing Android Studio from auto-importing or optimizing with them. This can be done via the `Preferences > Editor > Kotlin > Code Style > Use single name import` option.
 
 ## Finding issues to work on
 **New to Mozilla's mobile projects?** See issues labeled `good first issue` in your project's
