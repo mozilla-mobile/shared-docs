@@ -29,7 +29,29 @@ brew install java11
 ```
 
 ### Method #3: install from website
-TODO
+You can install Java from
+[Oracle](https://www.oracle.com/java/technologies/downloads/#java8-mac)
+using this link.
+
+Installing the JDK:
+* Navigate to `Java SE Development Kit 8u341` and click `macOS`.
+* Download the package named `jdk-8u341-macosx-x64.dmg`. Oracle requires you to
+  make an account in order to install the JDK. Follow the instructions and
+  confirm your email.
+* Launch your `.dmg` installer and follow the installation wizard.
+* Add the following line to your `~/.zshrc` or equivalent shell startup file: `export JAVA_HOME=$(/usr/libexec/java_home)`
+
+That's it! To verify correctness, open a new shell, navigate to a directory with Android source code, and type `./gradlew tasks`.
+
+As explained in Method #1, `$JAVA_HOME` is the environment variable
+in UNIX environments that points to your JDK installation.
+`/usr/libexec/java_home` is a symbolic link that points to matching Java VMs
+installed in your environment.
+
+If you are having trouble, please make sure to read this [Java
+Doc](https://www.java.com/en/download/help/mac_install.html) on how to install
+Java on your machine. Although this documentation highlights how to install the
+JRE, installing the JDK follows the same steps.
 
 ## Troubleshooting
 ### Get Java version
